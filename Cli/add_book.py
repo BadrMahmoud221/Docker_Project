@@ -1,9 +1,9 @@
 import requests
 
-BASE_URL = "https://dockerproject-production-ced3.up.railway.app"
+BASE_URL = "https://dockerproject-production-ced3.up.railway.app/books"
 
 def add_book(title, author):
-    response = requests.post(f"{BASE_URL}/books",
+    response = requests.post(BASE_URL,
         json={
             "title": title,
             "author": author
