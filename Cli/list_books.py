@@ -3,7 +3,7 @@ import requests
 BASE_URL = "https://dockerproject-production-ced3.up.railway.app"
 
 def list_books():
-    response = requests.get(BASE_URL)
+    response = requests.get(f"{BASE_URL}/books")
 
     books = response.json()
 
