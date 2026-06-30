@@ -1,54 +1,66 @@
-# Book Manager API 
+# 📚 Book Manager API
 
 ## Overview
 
-The **Book Manager API** is a simple RESTful application built with **FastAPI** that allows users to manage a collection of books. The project demonstrates client-server communication over HTTP by pairing a FastAPI backend .
+The **Book Manager API** is a RESTful application built with **FastAPI** that allows users to manage a collection of books. It includes a **Python CLI** client that communicates with the API over HTTP.
 
-Users can:
-
-* Add new books to the collection.
-* View all stored books or retrieve individual books.
-* Delete books from the collection.
-* Store basic information such as the book title, author, and whether it has been read.
-
-The backend uses **Pydantic** models to validate incoming data and an in-memory Python dictionary to store records.
+Features:
+- ➕ Add books
+- 📚 List all books
+- 🗑️ Delete books
+- 📝 Store title, author, ISBN, published year, genre, and availability
 
 ---
 
-## How to Start the FastAPI Server
+## Run the API
 
-### 1. Install the required dependencies
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Start the FastAPI server
+Start the server:
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-The API will be available at:
-
+API:
 ```
 http://127.0.0.1:8000
 ```
 
-Interactive API documentation can be accessed at:
-
+Swagger Docs:
 ```
 http://127.0.0.1:8000/docs
 ```
-3 : CLI Tools 
-python Cli\Cli.py
 
-CLI Tools that make us add , list , delete books 
+---
 
-## Optional Bonus Features Implemented
+## CLI Usage
 
-For this version of the project:
+Run:
 
+```bash
+python Cli\cli.py
+```
 
+Available commands:
 
-The current implementation focuses on demonstrating REST API development, request validation, and HTTP communication between a FastAPI backend and a custom Python CLI client.
+```bash
+# Add a book
+python Cli\cli.py add "<Title>" "<Author>" "<ISBN>" <Published_Year> "<Genre>" <Available>
+
+# List all books
+python Cli\cli.py list
+
+# Delete a book
+python Cli\cli.py delete <Book_ID>
+```
+
+Example:
+
+```bash
+python Cli\cli.py add "Python Basics" "Badr Mahmoud" "9780135957059" 2025 "Programming" True
+```

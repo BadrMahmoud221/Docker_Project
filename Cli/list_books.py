@@ -12,10 +12,13 @@ def list_books():
         return
 
     print("\n📚 Books:\n")
-
     for book in books:
-        print(
-            f"ID: {book['id']} | "
-            f"Title: {book['title']} | "
-            f"Author: {book['author']}"
-        )
+        print("-" * 50)
+        print(f" ID: {book['id']}")
+        print(f" Title          : {book['title']}")
+        print(f" Author         : {book['author']}")
+        print(f" ISBN           : {book['isbn']}")
+        print(f" Published Year : {book['published_year']}")
+        print(f" Genre          : {book['genre']}")
+        print(f" Available      : {book['available']}")
+        print("-" * 50)
